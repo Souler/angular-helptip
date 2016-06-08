@@ -1,0 +1,41 @@
+{
+  "name": "angular-helptip",
+  "version": "0.1.0",
+  "description": "Angular simple floating tooltip",
+  "main": "webpack.config.js",
+  "scripts": {
+    "postinstall": "bower install",
+    "build": "webpack && webpack -p",
+    "start": "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "version": "npm run build && git add -A dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Souler/angular-helptip.git"
+  },
+  "keywords": [
+    "angular",
+    "ng",
+    "helptip",
+    "tootlip",
+    "floating"
+  ],
+  "author": "Juan José Herrero Barbosa <juanjo.herrero@upplication.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Souler/angular-helptip/issues"
+  },
+  "homepage": "https://github.com/Souler/angular-helptip#readme",
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "webpack-dev-server": "^1.14.1"
+  }
+}

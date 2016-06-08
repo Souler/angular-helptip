@@ -1,0 +1,35 @@
+{
+  "name": "angular-helptip",
+  "description": "Angular simple floating tooltip",
+  "main": "dist/angular-helptip.js",
+  "authors": [
+    "Juan José Herrero Barbosa <juanjo.herrero@upplication.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "ng",
+    "helptip",
+    "tootlip",
+    "floating"
+  ],
+  "homepage": "https://github.com/Souler/angular-helptip",
+  "ignore": [
+    "**/.*",
+    "src",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "package.json",
+    "webpack.config.js",
+    "dist/assest/*",
+    "dist/*.html"
+  ],
+  "dependencies": {
+    "angular": "1.3"
+  },
+  "devDependencies": {
+    "angular-translate": "^2.11.0"
+  }
+}

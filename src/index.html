@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="upp.helptip.demo">
+    <head>
+        <meta charset="UTF-8">
+
+        <script src="assets/angular.js"></script>
+        <script src="assets/angular-translate.js"></script>
+
+        <link type="text/css" href="angular-helptip.css" rel="stylesheet">
+        <script type="text/javascript" src="angular-helptip.js"></script>
+        <script type="text/javascript">
+            angular
+            .module('upp.helptip.demo', [
+                'pascalprecht.translate',
+                'upp.helptip'
+            ])
+            .config(function($translateProvider) {
+                $translateProvider.useSanitizeValueStrategy(null)
+                $translateProvider.translations('en', {
+                    'localized.value1': 'This is hardcoded key localized string',
+                    'localized.value2': 'This is scope key localized string'
+                })
+                $translateProvider.use('en')
+            })
+        </script>
+    </head>
+    <body>
+        <h1>Angular Helptip Demo</h1>
+        <h2>Hardcoded</h2>
+        <p>
+            <div helptip="This is hardcoded string">
+                <pre>&lt;div helptip="This is hardcoded string"&gt;String literal&lt;/div&gt;</pre>
+            </div>
+            <div helptip="localized.value1">
+                <pre>&lt;div helptip="localized.value1"&gt;Localization key&lt;/div&gt;</pre>
+            </div>
+            <div helptip="localized.value1" helptip-translate="false">
+                <pre>&lt;div helptip="localized.value1" helptip-translate="false"&gt;Localization key with translation disabled&lt;/div&gt;</pre>
+            </div>
+            <div helptip="">
+                <pre>&lt;div helptip=""&gt;Empty string&lt;/div&gt;</pre>
+            </div>
+        </p>
+        <h2>Scope interpolation</h2>
+        <p>
+            <div helptip="{{ 'This is a scope variable' }}">
+                <pre ng-non-bindable>&lt;div helptip="{{ 'This is a scope variable' }}"&gt;String literal&lt;/div&gt;</pre>
+            </div>
+            <div helptip="{{ 'localized.value2' }}">
+                <pre ng-non-bindable>&lt;div helptip="{{ 'localized.value2' }}"&gt;Localization key&lt;/div&gt;</pre>
+            </div>
+            <div helptip="{{ 'localized.value2' }}" helptip-translate="{{ false }}">
+                <pre ng-non-bindable>&lt;div helptip="{{ 'localized.value2' }}" helptip-translate="{{ false }}"&gt;Localization key with translation disabled&lt;/div&gt;</pre>
+            </div>
+            <div helptip="{{ '' }}">
+                <pre ng-non-bindable>&lt;div helptip="{{ '' }}"&gt;Empty string&lt;/div&gt;</pre>
+            </div>
+            <div helptip="{{ null }}">
+                <pre ng-non-bindable>&lt;div helptip="{{ null }}"&gt;Null&lt;/div&gt;</pre>
+            </div>
+        </p>
+    </body>
+</html>
