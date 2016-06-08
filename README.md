@@ -1,4 +1,4 @@
-# angular helptip
+# angular-helptip
 Helptip is a simple floating tooltip for angular
 
 ## Instalation
@@ -7,7 +7,7 @@ First install it via bower
 $ bower install angular-helptip
 ```
 
-then add it to your html as follows
+Include the files on your html
 ```html
 <head>
   <!-- ... -->
@@ -16,6 +16,12 @@ then add it to your html as follows
   <!-- ... -->
 </head>
 ```
+
+And finally add it to your application dependencies
+```js
+angular.module('app', [ 'upp.helptip' ])
+```
+
 ## Usage
 
 Add it as an attribute html
@@ -41,15 +47,12 @@ since the cursor left the element.
 ```
 
 ## Config
-angular helptip exposes a provider that allows configuring some of its internal values:
+angular-helptip exposes a provider that allows configuring some of its internal values:
 ```js
-angular.module('app', [ 'upplication.helptip' ])
+angular.module('app', [ 'upp.helptip' ])
 .config(function(helptipConfigProvider) {
 	// Sets the class to be used
 	helptipConfigProvider.className('helptip')
-	// Sets the distance between the cursor and the tooltip 
-	helptipConfigProvider.topOffset(10)
-	helptipConfigProvider.leftOffset(10)
 	// Determines if we should try to use $translate if available
 	helptipConfigProvider.useTranslate(true)
 	// Default timeout when using helptip-timeout config
