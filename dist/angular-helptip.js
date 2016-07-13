@@ -1,4 +1,4 @@
-/*! Helptip v1.0.0 - © Upplication 2016 */
+/*! Helptip v1.0.1 - © Upplication 2016 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};

@@ -1,2 +1,2 @@
-/*! Helptip v1.0.0 - © Upplication 2016 */
+/*! Helptip v1.0.1 - © Upplication 2016 */
 .helptip{max-width:300px;background-color:#1e1f26;border-radius:5px;padding:8px 10px;color:#f6f6f6;font-size:14px;font-weight:400;letter-spacing:.02em;margin-top:20px}.anim-helptip-opacity,.helptip{-webkit-animation:opacity-help .3s ease-in-out;animation:opacity-help .3s ease-in-out}@-webkit-keyframes opacity-help{0%{opacity:0}50%{opacity:.3}70%{opacity:.5}to{opacity:1}}@keyframes opacity-help{0%{opacity:0}50%{opacity:.3}70%{opacity:.5}to{opacity:1}}
