@@ -18,7 +18,7 @@ var HelptipDirective = function($document, $injector, $timeout, helptipConfig) {
             if (dom == null) {
                 dom = angular.element('<div>')
                     .addClass('helptip')
-                    .css('position', 'absolute')
+                    .css('position', 'fixed')
                     .css('top', 0)
                     .css('left', 0)
                     .css('visibility', 'hidden')
