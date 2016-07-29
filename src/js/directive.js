@@ -60,13 +60,13 @@ var HelptipDirective = function($document, $injector, $timeout, helptipConfig) {
                 if (message == null)
                     return
 
-                var xStart = e.pageX
+                var xStart = e.clientX
                 var xLength = dom[0].offsetWidth
-                var xEnd = e.pageX + xLength
+                var xEnd = e.clientX + xLength
                 var xMax = window.innerWidth
-                var yStart = e.pageY
+                var yStart = e.clientY
                 var yLength = dom[0].offsetHeight
-                var yEnd = e.pageY + yLength
+                var yEnd = e.clientY + yLength
                 var yMax = window.innerHeight
 
                 // Default behaviour (not near limits)
