@@ -111,7 +111,13 @@ var HelptipDirective = function($document, $injector, $timeout, helptipConfig) {
             .on('mouseenter', create)
             .on('mousemove', update)
             .on('mouseleave', remove)
-            .bind('$destroy', remove)
+            .bind('$destroy', function() {
+                element
+                .off('mouseenter', create)
+                .off('mousemove', update)
+                .off('mouseleave', remove)
+                remove()
+            })
         }
     }
 }
