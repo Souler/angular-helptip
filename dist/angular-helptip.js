@@ -1,4 +1,4 @@
-/*! Helptip v1.0.3 - © Upplication 2016 */
+/*! Helptip v1.0.4 - © Upplication 2016 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -237,7 +237,13 @@
 	            .on('mouseenter', create)
 	            .on('mousemove', update)
 	            .on('mouseleave', remove)
-	            .bind('$destroy', remove)
+	            .bind('$destroy', function() {
+	                element
+	                .off('mouseenter', create)
+	                .off('mousemove', update)
+	                .off('mouseleave', remove)
+	                remove()
+	            })
 	        }
 	    }
 	}

@@ -1,6 +1,6 @@
 {
   "name": "angular-helptip",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Angular simple floating tooltip",
   "main": "webpack.config.js",
   "scripts": {
