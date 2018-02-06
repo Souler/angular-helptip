@@ -1,6 +1,6 @@
 {
   "name": "angular-helptip",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Angular simple floating tooltip",
   "browser": "dist/angular-helptip.js",
   "main": "dist/angular-helptip.js",
@@ -8,7 +8,7 @@
     "build": "webpack && webpack -p",
     "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "version": "npm run build && git add -A dist"
+    "version": "npm run build && git add -A dist/angular-helptip*"
   },
   "repository": {
     "type": "git",
