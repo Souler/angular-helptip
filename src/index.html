@@ -2,27 +2,8 @@
 <html ng-app="upp.helptip.demo">
     <head>
         <meta charset="UTF-8">
-
-        <script src="assets/angular.js"></script>
-        <script src="assets/angular-translate.js"></script>
-
-        <link type="text/css" href="angular-helptip.css" rel="stylesheet">
-        <script type="text/javascript" src="angular-helptip.js"></script>
-        <script type="text/javascript">
-            angular
-            .module('upp.helptip.demo', [
-                'pascalprecht.translate',
-                'upp.helptip'
-            ])
-            .config(function($translateProvider) {
-                $translateProvider.useSanitizeValueStrategy(null)
-                $translateProvider.translations('en', {
-                    'localized.value1': 'This is hardcoded key localized string',
-                    'localized.value2': 'This is scope key localized string'
-                })
-                $translateProvider.use('en')
-            })
-        </script>
+        <script src="<%= require('file-loader?name=vendor/[name].[ext]!angular/angular.js') %>"></script>
+        <script src="<%= require('file-loader?name=vendor/[name].[ext]!angular-translate') %>"></script>
     </head>
     <body>
         <h1>Angular Helptip Demo</h1>
@@ -59,5 +40,20 @@
                 <pre ng-non-bindable>&lt;div helptip="{{ null }}"&gt;Null&lt;/div&gt;</pre>
             </div>
         </p>
+        <script type="text/javascript">
+            angular
+            .module('upp.helptip.demo', [
+                'pascalprecht.translate',
+                'upp.helptip'
+            ])
+            .config(function($translateProvider) {
+                $translateProvider.useSanitizeValueStrategy(null)
+                $translateProvider.translations('en', {
+                    'localized.value1': 'This is hardcoded key localized string',
+                    'localized.value2': 'This is scope key localized string'
+                })
+                $translateProvider.use('en')
+            })
+        </script>
     </body>
 </html>

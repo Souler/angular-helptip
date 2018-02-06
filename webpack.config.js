@@ -1,8 +1,7 @@
-'use strict'
-
+const path = require('path')
 const pkg = JSON.parse(require('fs').readFileSync('package.json'))
-  ,   webpack = require('webpack')
-  ,   ExtractTextPlugin = require('extract-text-webpack-plugin')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 let  moduleName = pkg.name
 if (process.argv.indexOf('-p') >= 0 || process.argv.indexOf('--optimize-minimize') >= 0)
@@ -10,29 +9,26 @@ if (process.argv.indexOf('-p') >= 0 || process.argv.indexOf('--optimize-minimize
 
 module.exports = {
 	entry: {
-        [ moduleName ]: './src/entry.js'
+        [ moduleName ]: './src/module.js'
     },
     output: {
-        path: './dist',
+        path: path.resolve(__dirname, './dist'),
         filename: '[name].js'
-    },
-    resolve: {
-        modulesDirectories: [ 'bower_components' ]
     },
     module: {
         loaders: [
-            { test: /\.less$/, loader: ExtractTextPlugin.extract(['css', 'less']) },
-            { test: /index\.html$/, loader: 'file-loader?name=index.html' },
-            { test: /bower_components/, loader: 'file-loader?name=assets/[name].[ext]' }
+            { test: /\.css$/, loader: 'style-loader!css-loader' },
         ]
     },
     plugins: [
-        new webpack.ResolverPlugin(
-            new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('.bower.json', ['main'])
-        ),
-        new ExtractTextPlugin('[name].css'),
-        new webpack.BannerPlugin(`Helptip v${ pkg.version } - © Upplication ${ (new Date()).getFullYear() }`, { entryOnly: true })
-
+        new webpack.BannerPlugin({
+            banner: `Helptip v${ pkg.version } - © Upplication ${ (new Date()).getFullYear() }`,
+            entryOnly: true,
+        }),
+        new HtmlWebpackPlugin({
+            inject: 'head',
+            template: './src/index.html',
+        }),
     ],
     externals: {
         'angular': 'angular',

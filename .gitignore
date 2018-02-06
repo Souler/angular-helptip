@@ -34,5 +34,5 @@ bower_components
 .node_repl_history
 
 # Aux dist files
-dist/assets
-dist/index.html
+dist/
+!dist/angular-helptip*

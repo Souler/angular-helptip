@@ -2,17 +2,15 @@
 Helptip is a simple floating tooltip for angular
 
 ## Instalation
-First install it via bower
 ```
-$ bower install angular-helptip
+$ yarn add angular-helptip
 ```
 
 Include the files on your html
 ```html
 <head>
   <!-- ... -->
-  <link type="text/css" href="bower_components/angular-helptip/dist/angular-helptip.css" rel="stylesheet">
-  <script type="text/javascript" src="bower_components/angular-helptip/dist/angular-helptip.js"></script>
+  <script type="text/javascript" src="vendor/angular-helptip/dist/angular-helptip.js"></script>
   <!-- ... -->
 </head>
 ```

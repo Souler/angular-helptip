@@ -1,5 +1,6 @@
 var angular = require('angular')
 
+require('./helptip.directive.css')
 var HelptipDirective = function($document, $injector, $timeout, helptipConfig) {
     return {
         restrict: 'A',
